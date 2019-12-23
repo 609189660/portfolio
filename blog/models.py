@@ -7,3 +7,8 @@ class Blog(models.Model):
     pub_data=models.DateTimeField()
     body=models.TextField()
     image=models.ImageField(upload_to='images/')
+
+    def summary(self):
+        return self.body[:100]
+    def pub_date_pretty(self):
+        return self.pub_data.striftime
